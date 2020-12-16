@@ -43,7 +43,7 @@ class DummyDataPanel extends Component<DummyDataPanelProps, state> {
     }
   };
 
-  //function to generate the dropdown optiosn from the table names in state
+  //function to generate the dropdown options from the table names in state
   dropDownList = () => {
     const result: any = [];
     let tableName;
@@ -56,7 +56,7 @@ class DummyDataPanel extends Component<DummyDataPanelProps, state> {
         result.push(<Dropdown.Item key={i} className="queryItem" eventKey={tableName}>{tableName}</Dropdown.Item>);
       }
     } else {
-    // Adds message in dropdown list to show that not tables are available
+    // Adds message in dropdown list to show that no tables are available
     // Went this route because we couldn't get the dropdown to disappear if there were no tables in tableList
       result.push(<Dropdown.Item key='key' className="queryItem" eventKey='none'>No tables available!</Dropdown.Item>);
     }
