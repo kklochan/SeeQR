@@ -72,7 +72,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'node_modules')],
     extensions: ['.js', '.jsx', '.json', '.scss', '.less', '.css', '.tsx', '.ts'],
   },
-  target: "electron-renderer",
+  target: "web",
   devServer: {
     contentBase: path.resolve(__dirname, "/tsCompiled/frontend"),
     host: "localhost",
@@ -83,15 +83,15 @@ module.exports = {
     watchOptions: {
       ignored: /node_modules/,
     },
-    before() {
-      spawn('electron', ['.', 'dev'], {
-        shell: true,
-        env: process.env,
-        stdio: 'inherit',
-      })
-        .on('close', (code) => process.exit(0))
-        .on('error', (spawnError) => console.error(spawnError));
-    },
+    // before() {
+    //   spawn('electron', ['.', 'dev'], {
+    //     shell: true,
+    //     env: process.env,
+    //     stdio: 'inherit',
+    //   })
+    //     .on('close', (code) => process.exit(0))
+    //     .on('error', (spawnError) => console.error(spawnError));
+    // },
   },
   plugins: [
     new HtmlWebpackPlugin({
