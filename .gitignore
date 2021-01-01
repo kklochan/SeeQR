@@ -1,5 +1,5 @@
 /node_modules
-# Removed dist
+/dist
 /tsCompiled
 */.DS_Store
 .DS_Store
