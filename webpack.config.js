@@ -83,7 +83,11 @@ module.exports = {
     watchOptions: {
       ignored: /node_modules/,
     },
-    
+    proxy: {
+      '/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
     // before() {
     //   spawn('electron', ['.', 'dev'], {
     //     shell: true,
