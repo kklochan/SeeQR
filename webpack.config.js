@@ -83,7 +83,7 @@ module.exports = {
     watchOptions: {
       ignored: /node_modules/,
     },
-    // this is a comment
+    
     // before() {
     //   spawn('electron', ['.', 'dev'], {
     //     shell: true,
