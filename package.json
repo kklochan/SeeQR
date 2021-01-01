@@ -109,8 +109,8 @@
     "setupFilesAfterEnv": [
       "<rootDir>/__tests__/setupTests.js"
     ]
+  },
+  "engines": {
+    "node": "12.0.0"
   }
-  // "engines": {
-  //   "node": "12.0.0"
-  // }
 }
