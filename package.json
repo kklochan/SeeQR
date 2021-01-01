@@ -11,7 +11,6 @@
   },
   "scripts": {
     "build": "tsc && webpack",
-    "docker": "docker-compose up -d",
     "start": "cross-env NODE_ENV=production",
     "dev": "tsc && cross-env NODE_ENV=development webpack-dev-server --hot",
     "new": "cross-env NODE_ENV=production",
