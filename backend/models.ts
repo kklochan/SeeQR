@@ -1,6 +1,11 @@
 const { Pool } = require('pg');
 const { getPrimaryKeys, getForeignKeys } = require('./DummyD/foreign_key_info');
 
+// const { parse } = require('pg-connection-string');
+// // Added config and relaced PG_URI with config throughout file
+// let config = parse(
+//   'postgres://seeqradmin:Seeqradmin123!@seeqr-instance2.cafqffmgzmlc.us-east-1.rds.amazonaws.com:5432/ebdb'
+// );
 // Initialize to a default db.
 // URI Format: postgres://username:password@hostname:port/databasename
 let PG_URI: string = 'postgres://postgres:postgres@localhost:5432/defaultDB';
@@ -72,7 +77,9 @@ module.exports = {
   },
 
   changeDB: (dbName: string) => {
-    PG_URI = 'postgres://postgres:postgres@localhost:5432/' + dbName;
+    PG_URI =
+      'postgres://seeqradmin:Seeqradmin123!@seeqr-instance2.cafqffmgzmlc.us-east-1.rds.amazonaws.com:5432/' +
+      dbName;
     pool = new Pool({ connectionString: PG_URI });
     console.log('Current URI: ', PG_URI);
     return dbName;
