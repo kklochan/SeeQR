@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc && webpack",
-    "start": "tsc && cross-env NODE_ENV=development webpack-dev-server --hot",
+    "start": "tsc && webpack-dev-server --hot",
     "dev": "tsc && cross-env NODE_ENV=development webpack-dev-server --hot",
     "new": "cross-env NODE_ENV=production",
     "test": "jest --verbose"
