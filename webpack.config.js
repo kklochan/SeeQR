@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-//const { spawn } = require('child_process');
+const { spawn } = require('child_process');
 
 module.exports = {
   entry: "./frontend/index.tsx",
@@ -89,15 +89,15 @@ module.exports = {
         secure: false,
       },
     },
-    // before() {
-    //   spawn('electron', ['.', 'dev'], {
-    //     shell: true,
-    //     env: process.env,
-    //     stdio: 'inherit',
-    //   })
-    //     .on('close', (code) => process.exit(0))
-    //     .on('error', (spawnError) => console.error(spawnError));
-    // },
+    before() {
+      spawn('node', ['.', 'dev'], {
+        shell: true,
+        env: process.env,
+        stdio: 'inherit',
+      })
+        .on('close', (code) => process.exit(0))
+        .on('error', (spawnError) => console.error(spawnError));
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
