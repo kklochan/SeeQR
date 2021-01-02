@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { spawn } = require('child_process');
+//const { spawn } = require('child_process');
 
 module.exports = {
   entry: "./frontend/index.tsx",
@@ -72,7 +72,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'node_modules')],
     extensions: ['.js', '.jsx', '.json', '.scss', '.less', '.css', '.tsx', '.ts'],
   },
-  target: "web",
+  target: "node",
   devServer: {
     contentBase: path.resolve(__dirname, "/tsCompiled/frontend"),
     host: "localhost",
