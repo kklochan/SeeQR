@@ -88,6 +88,7 @@ module.exports = {
         target: 'http://localhost:3000/',
         secure: false,
       },
+    },
     // before() {
     //   spawn('electron', ['.', 'dev'], {
     //     shell: true,
