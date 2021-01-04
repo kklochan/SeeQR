@@ -81,7 +81,7 @@ module.exports = {
       '.ts',
     ],
   },
-  target: 'node',
+  target: 'web',
   devServer: {
     contentBase: path.resolve(__dirname, '/tsCompiled/frontend'),
     host: 'localhost',
@@ -92,21 +92,12 @@ module.exports = {
     watchOptions: {
       ignored: /node_modules/,
     },
-    proxy: {
-      '/**': {
-        target: 'http://localhost:3000/',
-        secure: false,
-      },
-    },
-    before() {
-      spawn('node', ['.', 'dev'], {
-        shell: true,
-        env: process.env,
-        stdio: 'inherit',
-      })
-        .on('close', (code) => process.exit(0))
-        .on('error', (spawnError) => console.error(spawnError));
-    },
+    // proxy: {
+    //   '/**': {
+    //     target: 'http://localhost:3000/',
+    //     secure: false,
+    //   },
+   // },
   },
   plugins: [
     new HtmlWebpackPlugin({

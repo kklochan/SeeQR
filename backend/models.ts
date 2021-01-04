@@ -8,8 +8,11 @@ const { getPrimaryKeys, getForeignKeys } = require('./DummyD/foreign_key_info');
 // );
 // Initialize to a default db.
 // URI Format: postgres://username:password@hostname:port/databasename
-let PG_URI: string = 'postgres://postgres:postgres@localhost:5432/defaultDB';
+let PG_URI: string = 
+'psql --host=connection-test.cxzblvpiibea.us-east-1.rds.amazonaws.com --port=5432 --username=testdbadmin --password --dbname=testdb'
+// 'postgres://postgres:postgres@localhost:5432/defaultDB';
 let pool: any = new Pool({ connectionString: PG_URI });
+
 
 //helper function that creates the column objects, which are saved to the schemaLayout object
 //this function returns a promise to be resolved with Promise.all syntax

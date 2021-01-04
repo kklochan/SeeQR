@@ -12,7 +12,16 @@ const db = require('./models');
 // Generate CLI commands to be executed in child process.
 // updated commands to use postgres without docker (commented out docker code)
 const createDBFunc = (name) => {
-  return `psql -U postgres -c "CREATE DATABASE ${name}"`;
+  return `psql -U testdbadmin 
+    CREATE TABLE test_table (
+      _id serial PRIMARY KEY,
+      username character varying ( 50 ),
+      password character varying ( 50 ),
+      created_on timestamp with time zone,
+      database_count integer
+      );`
+  
+  // psql -U postgres -c "CREATE DATABASE ${name}"`;
   //return `docker exec postgres-1 psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE ${name}"`;
 };
 
