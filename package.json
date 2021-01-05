@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc && webpack",
-    "start": "npm run build && node frontend/index.tsx",
+    "start": "node /backend/server.ts",
     "dev": "tsc && NODE_ENV=development nodemon ./backend/server.ts & webpack-dev-server --hot",
     "new": "cross-env NODE_ENV=production --noDevServer .",
     "test": "jest --verbose"
