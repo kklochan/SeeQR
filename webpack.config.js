@@ -88,16 +88,13 @@ module.exports = {
     port: '8080',
     hot: true,
     compress: true,
+    proxy: {
+      '/**': 'http://localhost:3000/',
+    },
     watchContentBase: true,
     watchOptions: {
       ignored: /node_modules/,
     },
-    // proxy: {
-    //   '/**': {
-    //     target: 'http://localhost:3000/',
-    //     secure: false,
-    //   },
-   // },
   },
   plugins: [
     new HtmlWebpackPlugin({

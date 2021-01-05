@@ -170,7 +170,8 @@ ipcMain.on('upload-file', (event, filePath: string) => {
   };
 
   // Step 1: Create empty db
-  if (extension === '.sql' || extension === '.tar') execute(createDB, step2, () => event.sender.send('async-complete'));
+  if (extension === '.sql' || extension === '.tar')
+    execute(createDB, step2, () => event.sender.send('async-complete'));
   else console.log('INVALID FILE TYPE: Please use .tar or .sql extensions.');
 });
 
@@ -248,10 +249,15 @@ ipcMain.on('input-schema', (event, data: SchemaType) => {
       // this generates a pg_dump file from the specified db and saves it to a location in the container.
       // Full copy case
       if (copy) {
-        execute(runFullCopy, step3Copy, () => event.sender.send('async-complete'));
+        execute(runFullCopy, step3Copy, () =>
+          event.sender.send('async-complete')
+        );
       }
       // Hollow copy case
-      else execute(runHollowCopy, step3Copy, () => event.sender.send('async-complete'));
+      else
+        execute(runHollowCopy, step3Copy, () =>
+          event.sender.send('async-complete')
+        );
       return;
     }
     // if we are not copying
