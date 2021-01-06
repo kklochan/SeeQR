@@ -98,5 +98,5 @@ server.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-const port = process.env.port || 3000;
-server.listen(port, () => console.log('listening on port 3000'));
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log('listening on port 3000'));
