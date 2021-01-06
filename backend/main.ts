@@ -1,9 +1,9 @@
 // Import parts of electron to use
-import { app, BrowserWindow, ipcMain, Menu } from 'electron';
+// import { app, BrowserWindow, ipcMain, Menu } from 'electron';
 import { appendFile } from 'fs/promises';
 import { join } from 'path';
 import { format } from 'url';
-import './channels'; // all channels live here - this format signals that we want to import the code even if we're not calling any of the functions. If we were to import an object from channels and not call any of the functions in this file, webpack thinks we're not using it and skips the import.
+//import './channels'; // all channels live here - this format signals that we want to import the code even if we're not calling any of the functions. If we were to import an object from channels and not call any of the functions in this file, webpack thinks we're not using it and skips the import.
 //import execute from './channels';
 
 const { exec } = require('child_process');
